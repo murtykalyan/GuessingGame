@@ -1,12 +1,7 @@
 #/usr/bin/env bash
 
-all: README.md
-
 README.md: guessinggame.sh
 	touch README.md
 	echo "# GuessingGame" > README.md
-	echo $$(date) >> README.md
-	echo "  \n" >> README.md
+	echo "The date and time at which makefile was run is $$(date)" >> README.md
 	wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md
-clean:
-	rm README.md
